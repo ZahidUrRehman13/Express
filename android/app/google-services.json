@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "352485659330",
+    "project_id": "edsgym-27350",
+    "storage_bucket": "edsgym-27350.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352485659330:android:fd91fe22ce5551e7f8a15b",
+        "android_client_info": {
+          "package_name": "com.example.edscool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352485659330-0dlas5no62pl72f8ag8sg210q23vilv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR6XbIQTXAIJRlmABlZv7AY6AZIhdQZfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352485659330-0dlas5no62pl72f8ag8sg210q23vilv2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "352485659330-eelpeeckn4lvcl4g88mccdvblsk1fh49.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.edscool"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352485659330:android:466c8630ee8029e2f8a15b",
+        "android_client_info": {
+          "package_name": "com.example.express"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352485659330-0dlas5no62pl72f8ag8sg210q23vilv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR6XbIQTXAIJRlmABlZv7AY6AZIhdQZfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352485659330-0dlas5no62pl72f8ag8sg210q23vilv2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "352485659330-eelpeeckn4lvcl4g88mccdvblsk1fh49.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.edscool"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

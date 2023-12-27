@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>352485659330-cj63a4pjn3bnjp4rmgoebml345uj2iv4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.352485659330-cj63a4pjn3bnjp4rmgoebml345uj2iv4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDPAr8mZXZ6lOaURtE9PfWmNQed8R5FIgo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>352485659330</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.express</string>
+	<key>PROJECT_ID</key>
+	<string>edsgym-27350</string>
+	<key>STORAGE_BUCKET</key>
+	<string>edsgym-27350.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:352485659330:ios:7faf24681c6c7004f8a15b</string>
+</dict>
+</plist>
