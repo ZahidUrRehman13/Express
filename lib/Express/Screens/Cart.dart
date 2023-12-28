@@ -3,6 +3,7 @@ import 'package:express/Express/CartProvider.dart';
 import 'package:express/Express/Config/ConstantColor.dart';
 import 'package:express/Express/Config/ConstantSize.dart';
 import 'package:express/Express/Models/CartModel.dart';
+import 'package:express/Express/Screens/Print.dart';
 import 'package:express/Express/Widgets/ItemCell.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -112,7 +113,9 @@ class _CartState extends State<Cart> {
                     right: 10.0,
                     top: 5.0,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const ESCPOS()));
+                      },
                       style: TextButton.styleFrom(
                           backgroundColor: ConstantColor.colorWhite, // Set your desired background color
                           shape: RoundedRectangleBorder(
