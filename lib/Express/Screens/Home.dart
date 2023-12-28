@@ -82,39 +82,41 @@ class _HomeExpressState extends State<HomeExpress> {
                           onTap: () {
                             showOption(cartModel[index]);
                           },
-                          child: Card(
-                            elevation: 3,
+                          child:Card(
+                            elevation: 1.0,
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
                             color: Colors.white,
                             surfaceTintColor: Colors.white,
-                            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    width: width! * 0.28,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(5.0),
-                                        image: DecorationImage(
-                                          image: NetworkImage(
-                                            cartModel[index].image,
-                                          ),
-                                          fit: BoxFit.cover,
-                                        )),
-                                  ),
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 110,
+                                  height: 110,
+                                  margin:  const EdgeInsets.symmetric(horizontal: 5.0),
+                                  decoration:  BoxDecoration(
+                                      color: Colors.white,
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          cartModel[index].image,
+                                        ),
+                                        fit: BoxFit.cover,
+                                      )),
                                 ),
-                                Expanded(
-                                  flex: 1,
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 16.0,
+                                  ),
                                   child: Text(
                                     cartModel[index].name,
-                                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
                                   ),
-                                ),
+                                )
                               ],
                             ),
                           ),
+
                         );
                       },
                     ),
