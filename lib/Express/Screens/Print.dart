@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'dart:math'as math;
+import 'dart:math' as math;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:esc_pos_printer_plus/esc_pos_printer_plus.dart';
 import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
@@ -142,7 +142,6 @@ class _ESCPOSState extends State<ESCPOS> {
   }
 
   Future<void> printDemoReceipt(NetworkPrinter printer) async {
-
     int orderId = math.Random().nextInt(99999999);
 
     // Print image
@@ -162,13 +161,7 @@ class _ESCPOSState extends State<ESCPOS> {
         linesAfter: 1);
 
     printer.text('Order #$orderId',
-        styles: const PosStyles(
-            align: PosAlign.center,
-            height: PosTextSize.size1,
-            width: PosTextSize.size1,
-            bold: true
-        ),
-        linesAfter: 1);
+        styles: const PosStyles(align: PosAlign.center, height: PosTextSize.size1, width: PosTextSize.size1, bold: true), linesAfter: 1);
 
     printer.text('Shabia M-12, next to Shinning star international School', styles: const PosStyles(align: PosAlign.center));
     printer.text('Plot No C40, building No 11, Shop No 1', styles: const PosStyles(align: PosAlign.center));
@@ -308,12 +301,11 @@ class _ESCPOSState extends State<ESCPOS> {
     printer.text("Terms & Conditions", styles: const PosStyles(align: PosAlign.left, bold: true), linesAfter: 2);
     printer.text(
         "The management is not responsible for color change and shrink, incase of damage or loss of article the compensation is limited to a 5 "
-            "times cleaning charges",
+        "times cleaning charges",
         styles: const PosStyles(align: PosAlign.center),
         linesAfter: 2);
-    printer.text("The management is not responsible for any items, which stay with us for the tenure of 6 months", styles: const PosStyles(align:
-    PosAlign
-        .center), linesAfter: 2);
+    printer.text("The management is not responsible for any items, which stay with us for the tenure of 6 months",
+        styles: const PosStyles(align: PosAlign.center), linesAfter: 2);
     printer.feed(1);
     printer.cut();
   }
@@ -385,52 +377,52 @@ class _ESCPOSState extends State<ESCPOS> {
                 const SizedBox(height: 15),
                 isDiscovering
                     ? LoadingAnimationWidget.fourRotatingDots(
-                  color: ConstantColor.colorOrangeTiger,
-                  size: 30,
-                )
+                        color: ConstantColor.colorOrangeTiger,
+                        size: 30,
+                      )
                     : Expanded(
-                  child: ListView.builder(
-                    itemCount: devices.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return InkWell(
-                        onTap: () => testlog(devices[index], context),
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              height: 60,
-                              padding: const EdgeInsets.only(left: 10),
-                              alignment: Alignment.centerLeft,
-                              child: Row(
+                        child: ListView.builder(
+                          itemCount: devices.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return InkWell(
+                              onTap: () => testlog(devices[index], context),
+                              child: Column(
                                 children: <Widget>[
-                                  const Icon(Icons.print),
-                                  const SizedBox(width: 10),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                  Container(
+                                    height: 60,
+                                    padding: const EdgeInsets.only(left: 10),
+                                    alignment: Alignment.centerLeft,
+                                    child: Row(
                                       children: <Widget>[
-                                        Text(
-                                          '${devices[index]}:${portController.text}',
-                                          style: const TextStyle(fontSize: 16),
+                                        const Icon(Icons.print),
+                                        const SizedBox(width: 10),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Text(
+                                                '${devices[index]}:${portController.text}',
+                                                style: const TextStyle(fontSize: 16),
+                                              ),
+                                              Text(
+                                                'Click to print a test receipt',
+                                                style: TextStyle(color: Colors.grey[700]),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                        Text(
-                                          'Click to print a test receipt',
-                                          style: TextStyle(color: Colors.grey[700]),
-                                        ),
+                                        const Icon(Icons.chevron_right),
                                       ],
                                     ),
                                   ),
-                                  const Icon(Icons.chevron_right),
+                                  const Divider(),
                                 ],
                               ),
-                            ),
-                            const Divider(),
-                          ],
+                            );
+                          },
                         ),
-                      );
-                    },
-                  ),
-                )
+                      )
               ],
             ),
           );
@@ -439,4 +431,3 @@ class _ESCPOSState extends State<ESCPOS> {
     );
   }
 }
-
