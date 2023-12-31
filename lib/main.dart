@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF00E4FD)),
             useMaterial3: true,
           ),
-          home: const HomeExpress(),
+          home: const Home(),
         ));
   }
 }

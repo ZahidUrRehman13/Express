@@ -17,14 +17,11 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-
-
   @override
   void initState() {
-   WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-     _fetchItems();
-
-   });
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _fetchItems();
+    });
     super.initState();
   }
 
@@ -34,11 +31,11 @@ class _CartState extends State<Cart> {
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('orders_placed').get();
 
       querySnapshot.docs.forEach((item) {
-        pricePerItem += double.parse(item['price'])*item['counter'];
+        pricePerItem += double.parse(item['price']) * item['counter'];
       });
 
-      if(context.mounted){
-        context.read<CartProvider>().setTotalPrice=pricePerItem;
+      if (context.mounted) {
+        context.read<CartProvider>().setTotalPrice = pricePerItem;
       }
 
       debugPrint('totalPrice: $pricePerItem');
@@ -54,9 +51,12 @@ class _CartState extends State<Cart> {
     var width = ConstantSize.width;
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Cart"),
+          title: const Text(
+            "Cart",
+            style: TextStyle(color: Colors.black),
+          ),
           centerTitle: true,
-          backgroundColor: Colors.white,
+          backgroundColor: ConstantColor.colorOrangeTiger,
           elevation: 0.0,
         ),
         body: Wrap(
@@ -114,7 +114,7 @@ class _CartState extends State<Cart> {
                     top: 5.0,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const ESCPOS()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ESCPOS()));
                       },
                       style: TextButton.styleFrom(
                           backgroundColor: ConstantColor.colorWhite, // Set your desired background color
@@ -133,18 +133,12 @@ class _CartState extends State<Cart> {
                   Positioned(
                     top: 16.0,
                     left: 10.0,
-                    child: Consumer<CartProvider>(
-                      builder: (context, data,_) {
-                        return Text(
-                          data.getTotalPrice.toString(),
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600
-                          ),
-                        );
-                      }
-                    ),
+                    child: Consumer<CartProvider>(builder: (context, data, _) {
+                      return Text(
+                        data.getTotalPrice.toString(),
+                        style: const TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),
+                      );
+                    }),
                   ),
                 ],
               ),

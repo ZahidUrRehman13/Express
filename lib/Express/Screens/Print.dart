@@ -24,8 +24,10 @@ class _ESCPOSState extends State<ESCPOS> {
   bool isDiscovering = false;
   int found = -1;
   TextEditingController portController = TextEditingController(text: '9100');
+  TextEditingController ipController = TextEditingController(text: '');
 
   void discover(BuildContext ctx) async {
+    debugPrint("ip_show ${ipController.text}");
     setState(() {
       isDiscovering = true;
       devices.clear();
@@ -34,7 +36,7 @@ class _ESCPOSState extends State<ESCPOS> {
 
     String ip;
     try {
-      ip = '172.20.30.77';
+      ip = ipController.text.isNotEmpty ? ipController.text : '172.20.30.77';
       log('local ip:\t$ip');
     } catch (e) {
       const snackBar = SnackBar(content: Text('WiFi is not connected', textAlign: TextAlign.center));
@@ -357,6 +359,13 @@ class _ESCPOSState extends State<ESCPOS> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 10),
+                TextField(
+                  controller: ipController,
+                  decoration: const InputDecoration(
+                    labelText: 'Local Network IP Address:',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
                 Text('Local Network IP Address: $localIp', style: const TextStyle(fontSize: 16)),
                 const SizedBox(height: 15),
                 Container(

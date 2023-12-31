@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 class ConstantColor{
 
   static Color colorPrimary = const Color(0xFF675d85);
-  static Color colorOrangeTiger = const Color(0xFFFD6A02);
+  static Color colorOrangeTiger =  const Color(0xFF00E4FD);
   static Color colorOrangeYellow = const Color(0xFFFFB200);
   static Color colorBottomBar = const Color(0xFFf5f5f6);
   static Color colorBackground = const Color(0xFFF4F5F6);
