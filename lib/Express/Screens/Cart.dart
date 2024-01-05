@@ -3,6 +3,7 @@ import 'package:express/Express/CartProvider.dart';
 import 'package:express/Express/Config/ConstantColor.dart';
 import 'package:express/Express/Config/ConstantSize.dart';
 import 'package:express/Express/Models/CartModel.dart';
+import 'package:express/Express/Screens/PosESc.dart';
 import 'package:express/Express/Screens/Print.dart';
 import 'package:express/Express/Widgets/ItemCell.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
+
+  bool first = false;
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
@@ -43,6 +46,7 @@ class _CartState extends State<Cart> {
       debugPrint('Error fetching data: $e');
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +118,15 @@ class _CartState extends State<Cart> {
                     top: 5.0,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ESCPOS()));
+                        if(first){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const PosEsc()));
+                        }else{
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ESCPOS()));
+                        }
+                        setState(() {
+                          first = !first;
+                        });
+
                       },
                       style: TextButton.styleFrom(
                           backgroundColor: ConstantColor.colorWhite, // Set your desired background color
